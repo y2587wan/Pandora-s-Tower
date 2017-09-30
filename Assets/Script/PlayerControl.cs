@@ -7,80 +7,38 @@ public class PlayerControl : MonoBehaviour {
 
 
     public float speed;
-    public float addForce = 800;
-    public float jumpForce;
+    public float vertialSpeed;
     public Text scoreText;
     public KeyCode jump;
     public KeyCode moveLeft;
     public KeyCode moveRight;
-    public float startForce = 100;
 
-    private Vector2 force;
     private int score = 0;
     private Rigidbody2D rb2d;
-    private bool onGround = true;
+    private bool isGround = true;
+    private float moveVertical;
     private float moveHorizontal;
-    private bool canJump = true;
-
-    float JumpForce
-    {
-        get { return jumpForce; }
-        set
-        {
-            if (value <= 0)
-                jumpForce = 0;
-            else
-                jumpForce = value;
-        }
-    }
-
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        jumpForce = startForce;
         SetCountText();
     }
 
     void Update()
     {
-        Jump();
         MovementControl();
     }
 
-    void Jump()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKey(jump) && canJump)
+        if (collision.transform.tag == "Ground")
         {
-            JumpForce -= Time.deltaTime * addForce;
-            PlayerJump();
+            isGround = true;
         }
-
-        if (Input.GetKeyUp(jump) && !onGround)
+        else
         {
-            canJump = false;
+            isGround = false;
         }
-    }
-
-    void PlayerJump()
-    {
-        force = new Vector2(0, jumpForce);
-        rb2d.AddForce(force);
-    }
-
-    void OnCollisionEnter2D(Collision2D collider)
-    {
-        if (collider.gameObject.tag == "Ground")
-        {
-            JumpForce = startForce;
-            canJump = true;
-            onGround = true;
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collider)
-    {
-        if (collider.gameObject.tag == "Ground")
-            onGround = false;
     }
 
     private void MovementControl()
@@ -94,8 +52,18 @@ public class PlayerControl : MonoBehaviour {
         else
             moveHorizontal = 0;
 
-        Vector2 movement = new Vector2(moveHorizontal * speed, 0);
-        rb2d.AddForce(movement);
+        if (isGround && Input.GetKeyDown(jump))
+        {
+            moveVertical = vertialSpeed;
+            isGround = false;
+        }
+        else
+        {
+            moveVertical = 0;
+        }
+        
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        rb2d.AddForce(movement * speed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
