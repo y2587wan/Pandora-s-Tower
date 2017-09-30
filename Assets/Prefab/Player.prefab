@@ -69,8 +69,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414024436123500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64, y: -1.72, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.889, y: -4.137, z: 0}
+  m_LocalScale: {x: 1.0446116, y: 1.047746, z: 1}
   m_Children:
   - {fileID: 4231803861496448}
   m_Father: {fileID: 0}
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_LinearDrag: 0.3
   m_AngularDrag: 1
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6be90917265b3a147ab1d1d0ea7b2096, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -144,18 +144,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.010409951, y: -0.027562976}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.48}
+    oldSize: {x: 0.9, y: 0.9}
     newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 0.50081986, y: 0.85209846}
   m_EdgeRadius: 0
 --- !u!81 &81980966978256560
 AudioListener:
@@ -184,6 +184,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   vertialSpeed: 45
+  scoreText: {fileID: 0}
+  jump: 273
+  moveLeft: 276
+  moveRight: 275
 --- !u!124 &124294065383627806
 Behaviour:
   m_ObjectHideFlags: 1
@@ -223,8 +227,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 744ee888e396d3a47a5280cc499d6510, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 461eaf31c4ffa0a438af0e302c8c50db, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
