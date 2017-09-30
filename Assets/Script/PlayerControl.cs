@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour {
 
 
     public float speed;
     public float vertialSpeed;
+    public Text scoreText;
 
+    private int score = 0;
     private Rigidbody2D rb2d;
     private bool isGround = true;
     private float moveVertical;
@@ -15,6 +18,7 @@ public class PlayerControl : MonoBehaviour {
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        SetCountText();
     }
 
     void Update()
@@ -51,5 +55,19 @@ public class PlayerControl : MonoBehaviour {
         rb2d.AddForce(movement * speed);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "PickUp")
+        {
+            collision.gameObject.SetActive(false);
+            score++;
+        }
 
+        SetCountText();
+    }
+
+    private void SetCountText()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
 }
