@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - PickUp
+  - ChasingObject
+  - ClearObject
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - ChasingObject
   - Platform
   - Player
-  - 
+  - ClearObject
   - 
   - 
   - 

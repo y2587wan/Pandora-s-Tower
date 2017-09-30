@@ -21,10 +21,11 @@ GameObject:
   - component: {fileID: 4446983687779114}
   - component: {fileID: 212578691426283976}
   - component: {fileID: 50598078799065356}
-  - component: {fileID: 61020184329853334}
+  - component: {fileID: 58404357063942854}
+  - component: {fileID: 114989173288843176}
   m_Layer: 0
-  m_Name: block
-  m_TagString: Untagged
+  m_Name: DropObject
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1589236031203530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10105188, y: 9.580797, z: 0}
-  m_LocalScale: {x: 8, y: 3, z: 1}
+  m_LocalPosition: {x: 4.57076, y: 31.888699, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,17 +54,17 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 5.5295997
+  m_Mass: 0.025446903
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2d171a101480bb745877423fb7a87660, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61020184329853334
-BoxCollider2D:
+--- !u!58 &58404357063942854
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -75,18 +76,20 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.48}
-    newSize: {x: 0.48, y: 0.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.48, y: 0.48}
-  m_EdgeRadius: 0
+  m_Radius: 0.09
+--- !u!114 &114989173288843176
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589236031203530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baccec707f3c7846896a092f02bd57a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedHorizontal: 1
 --- !u!212 &212578691426283976
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -119,8 +122,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 744ee888e396d3a47a5280cc499d6510, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 0.029411793, b: 0.029411793, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
