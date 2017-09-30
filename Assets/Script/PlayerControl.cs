@@ -24,7 +24,6 @@ public class PlayerControl : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.transform.name);
         if (collision.transform.tag == "Ground")
         {
             isGround = true;
@@ -41,7 +40,6 @@ public class PlayerControl : MonoBehaviour {
         if (isGround && Input.GetKeyDown("space"))
         {
             moveVertical = vertialSpeed;
-            Debug.Log("Jump");
             isGround = false;
         }
         else
