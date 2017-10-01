@@ -156,7 +156,7 @@ public class PlayerControl : MonoBehaviour
         {
             isReachedHighest = true;
         }
-
+        animator.SetFloat("MovingSpeed", rb2d.velocity.y);
         animator.SetBool("JumpUp", isJumpingUp);
         animator.SetBool("JumpHighest", isReachedHighest);
         animator.SetBool("JumpDown", isJumpingDown);

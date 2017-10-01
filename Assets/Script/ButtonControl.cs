@@ -9,11 +9,18 @@ public class ButtonControl : MonoBehaviour
     private bool isPressByPlayer = false;
     public Text GameWinText;
     public GameObject ClearObject;
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player")
         {
+            animator.SetBool("press", true);
             isPressByPlayer = true;
             //Time.timeScale = 0;
             Debug.Log("You win!");
