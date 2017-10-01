@@ -27,7 +27,6 @@ public class ChasingControl : MonoBehaviour {
         if (collision.transform.tag == "Player")
         {
             Debug.Log("You lose");
-            Time.timeScale = 0;
             GameOverText.gameObject.SetActive(true);
         }
     }

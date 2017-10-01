@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212845089370142822}
   - component: {fileID: 61016521232216888}
   - component: {fileID: 82054899221091108}
+  - component: {fileID: 95222057388971704}
   m_Layer: 0
   m_Name: PickUp
   m_TagString: PickUp
@@ -147,6 +148,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95222057388971704
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049973770979066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &212845089370142822
 SpriteRenderer:
   m_ObjectHideFlags: 1

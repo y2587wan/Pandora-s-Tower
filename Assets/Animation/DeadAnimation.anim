@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Button
+  m_Name: DeadAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,7 +19,15 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: a31308b4680c082499ae014be51737fb, type: 3}
+      value: {fileID: 21300000, guid: 9390b655394f5ac479b9e828acf39a99, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: 791e44d26345d4849b6b2e35c29ee119, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: f5cf242ed0476134ab8d9c24fd03f9c3, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: 24a254de21712a840ae5acd75fdb3dbc, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: fa978eb8e5bfe694bb9ffe3716ab83c9, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -39,18 +47,22 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: a31308b4680c082499ae014be51737fb, type: 3}
+    - {fileID: 21300000, guid: 9390b655394f5ac479b9e828acf39a99, type: 3}
+    - {fileID: 21300000, guid: 791e44d26345d4849b6b2e35c29ee119, type: 3}
+    - {fileID: 21300000, guid: f5cf242ed0476134ab8d9c24fd03f9c3, type: 3}
+    - {fileID: 21300000, guid: 24a254de21712a840ae5acd75fdb3dbc, type: 3}
+    - {fileID: 21300000, guid: fa978eb8e5bfe694bb9ffe3716ab83c9, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.083333336
+    m_StopTime: 0.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

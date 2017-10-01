@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - PickUp
   - ChasingObject
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - Platform
   - Player
   - DropObject
-  - 
-  - 
+  - Button
+  - Enemy
   - 
   - 
   - 

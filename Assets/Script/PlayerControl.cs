@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class PlayerControl : MonoBehaviour
 {
 
-
+    public AudioSource coinSound;
+    public AudioSource jumpSound;
     public float speed;
     public float addForce = 800;
     public float jumpForce;
@@ -29,7 +30,7 @@ public class PlayerControl : MonoBehaviour
     private bool isJumpingDown = false;
     private bool isReachedHighest = false;
     private bool isCollided = false;
-
+    private bool isLost = false;
 
     float JumpForce
     {
@@ -53,13 +54,21 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        Jump();
-        MovementControl();
-        JumpAnimation();
+        if (!isLost)
+        {
+            Jump();
+            MovementControl();
+            JumpAnimation();
+        }
+
     }
 
     void Jump()
     {
+        if (Input.GetKeyDown(jump) && onGround && canJump)
+        {
+            jumpSound.Play();
+        }
         if (Input.GetKey(jump) && canJump)
         {
             JumpForce -= Time.deltaTime * addForce;
@@ -88,6 +97,12 @@ public class PlayerControl : MonoBehaviour
             isCollided = true;
             animator.SetBool("IsCollided", isCollided);
         }
+        if (collider.gameObject.tag == "ChasingObject")
+        {
+            isLost = true;
+            LoseAnimation();
+        }
+        
     }
 
 
@@ -135,7 +150,7 @@ public class PlayerControl : MonoBehaviour
 
     private void WalkAnimation()
     {
-        if (rb2d.velocity != Vector2.zero && onGround)
+        if (rb2d.velocity != Vector2.zero && onGround && (Input.GetKey(moveLeft) || Input.GetKey(moveRight)))
             isWalking = true;
         else
             isWalking = false;
@@ -167,10 +182,16 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Pickup(collision);
+    }
+
+    private void Pickup(Collider2D collision)
+    {
         if (collision.transform.tag == "PickUp")
         {
             collision.gameObject.SetActive(false);
             score++;
+            coinSound.Play();
         }
 
         SetCountText();
@@ -178,7 +199,7 @@ public class PlayerControl : MonoBehaviour
 
     private void SetCountText()
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "        " + score.ToString();
     }
 
     private void Flip()
@@ -187,5 +208,11 @@ public class PlayerControl : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    private void LoseAnimation()
+    {
+        animator.SetBool("Lose", true);
+        rb2d.velocity = Vector2.zero;
     }
 }
