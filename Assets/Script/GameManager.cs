@@ -13,4 +13,13 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void Help()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void ReturnMain()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
