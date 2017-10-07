@@ -17,16 +17,13 @@ public class ChasingControl : MonoBehaviour {
 	
 	void FixedUpdate () {
         speed += acceleration;
-
         rb2d.velocity = new Vector2(0, speed);
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player")
         {
-            Debug.Log("You lose");
             GameOverText.gameObject.SetActive(true);
         }
     }

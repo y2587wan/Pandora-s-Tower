@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class ButtonControl : MonoBehaviour
 {
-
-    private bool isPressByPlayer = false;
     public Text GameWinText;
     public GameObject ClearObject;
+
     private Animator animator;
+    private bool isPressByPlayer = false;
 
     private void Start()
     {
@@ -22,8 +22,6 @@ public class ButtonControl : MonoBehaviour
         {
             animator.SetBool("press", true);
             isPressByPlayer = true;
-            //Time.timeScale = 0;
-            Debug.Log("You win!");
             GameWinText.gameObject.SetActive(true);
             ClearObject.SetActive(true);
         }

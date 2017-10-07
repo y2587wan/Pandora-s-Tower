@@ -7,7 +7,9 @@ public class MovingPlatform : MonoBehaviour
     public float speed = 1f;
     public float mapWidth = 25f;
     public float timeDuration = 100f;
+
     private float timePass = 0;
+    private float x;
 
     private Rigidbody2D rb;
 
@@ -15,7 +17,7 @@ public class MovingPlatform : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-    float x;
+    
     void FixedUpdate()
     {
 

@@ -5,7 +5,8 @@ using UnityEngine;
 public class DropObjectControl : MonoBehaviour {
 
     public float speedHorizontal;
-    Rigidbody2D rb2d;
+
+    private Rigidbody2D rb2d;
 
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();

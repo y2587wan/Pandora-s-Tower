@@ -74,7 +74,6 @@ public class PlayerControl : MonoBehaviour
             JumpForce -= Time.deltaTime * addForce;
             PlayerJump();
         }
-
         if (Input.GetKeyUp(jump) && !onGround)
         {
             canJump = false;
@@ -102,7 +101,6 @@ public class PlayerControl : MonoBehaviour
             isLost = true;
             LoseAnimation();
         }
-        
     }
 
 
@@ -133,7 +131,6 @@ public class PlayerControl : MonoBehaviour
         Vector2 movement = new Vector2(moveHorizontal * speed, 0);
         rb2d.AddForce(movement);
         WalkAnimation();
-        
     }
 
     private void FlipDecider()
