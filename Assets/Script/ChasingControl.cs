@@ -26,5 +26,9 @@ public class ChasingControl : MonoBehaviour {
         {
             GameOverText.gameObject.SetActive(true);
         }
+        if (collision.transform.tag == "Ground")
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }

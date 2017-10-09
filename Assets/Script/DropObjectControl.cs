@@ -6,11 +6,14 @@ public class DropObjectControl : MonoBehaviour {
 
     public float speedHorizontal;
 
+    private Vector2 originalPosition;
+
     private Rigidbody2D rb2d;
 
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         Acceration();
+        originalPosition = gameObject.transform.position;
     }
 
     private void Update()
@@ -19,6 +22,7 @@ public class DropObjectControl : MonoBehaviour {
         {
             Acceration();
         }
+        Repeat();
     }
 
     private void Acceration()
@@ -30,6 +34,14 @@ public class DropObjectControl : MonoBehaviour {
         }
         Vector2 movement = new Vector2(speedHorizontal * direction, 0);
         rb2d.velocity = movement;
+    }
+
+    private void Repeat()
+    {
+        if (gameObject.transform.position.y < -2.5)
+        {
+            gameObject.transform.position = originalPosition;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
